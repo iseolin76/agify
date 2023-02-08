@@ -9,7 +9,7 @@ const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     return;
   }
   getAge(e.currentTarget.fullName.value).then((age) => {
-    const result = age.age === null ? "너무 많아 측정할 수 없음" : age.age;
+    const result = age.age === null ? Math.floor(Math.random() * 101) : age.age;
     alert("당신의 예상 나이는 " + result + " 세 입니다.");
   });
   e.currentTarget.reset();
