@@ -8,9 +8,15 @@ const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     alert("이름을 입력해주세요.");
     return;
   }
+  const localAge = localStorage.getItem("age");
+  if (localAge) {
+    alert("당신의 예상 나이는 " + localAge + " 세 입니다.");
+    return;
+  }
   getAge(e.currentTarget.fullName.value).then((age) => {
-    const result = age.age === null ? "너무 많아 측정할 수 없음" : age.age;
+    const result = age.age === null ? Math.floor(Math.random() * 101) : age.age;
     alert("당신의 예상 나이는 " + result + " 세 입니다.");
+    localStorage.setItem("age", result);
   });
   e.currentTarget.reset();
 };
