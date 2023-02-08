@@ -1,9 +1,3 @@
-# Test
+# Agify
 
-test
-
-test
-
-text
-
-test
+이름을 입력하면 나이를 예측해서 보여주는 웹사이트입니다.
